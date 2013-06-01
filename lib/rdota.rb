@@ -1,5 +1,3 @@
 require "rdota/version"
 
-module Rdota
-  # Your code goes here...
-end
+require 'rdota/client'

@@ -1,4 +1,6 @@
 require 'rspec'
+require 'rdota'
+require 'webmock/rspec'
 
 RSpec.configure do |config|
   config.color_enabled = true
