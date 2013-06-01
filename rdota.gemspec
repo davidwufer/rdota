@@ -23,4 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "factory_girl"
+
+  spec.add_dependency "faraday"
+  spec.add_dependency "faraday_middleware"
 end
