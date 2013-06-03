@@ -21,4 +21,7 @@ describe League do
     league.tournament_url.should == "http://www.dota.com"
   end
 
+  it 'should be equal to another league with the same information' do
+    league.should == fixture_for('league')
+  end
 end

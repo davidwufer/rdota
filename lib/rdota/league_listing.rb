@@ -1,12 +1,10 @@
 module Rdota
-  class League
-    attr_reader :name, :leagueid, :description, :tournament_url
+  class LeagueListing
+    attr_reader :leagues
+    alias_method :eql?, :==
 
     def initialize(args = {})
-      @name           = args["name"]
-      @leagueid       = args["leagueid"]
-      @description    = args["description"]
-      @tournament_url = args["tournament_url"]
+      @leagues = args["result"]["leagues"].map { |league| League.new(league) }
     end
 
     # TODO: Make all this comparable by mixing a module
@@ -19,6 +17,5 @@ module Rdota
       def attr
         instance_variables
       end
-
   end
 end

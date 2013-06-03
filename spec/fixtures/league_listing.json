@@ -1,0 +1,18 @@
+{
+  "result": {
+    "leagues": [
+      {
+        "name": "#DOTA1",
+        "leagueid": 1,
+        "description": "League Description 1",
+        "tournament_url": "http://www.dota.com/1/"
+      },
+      {
+        "name": "#DOTA2",
+        "leagueid": 2,
+        "description": "League Description 2",
+        "tournament_url": "http://www.dota.com/2/"
+      }
+    ]
+  }
+}

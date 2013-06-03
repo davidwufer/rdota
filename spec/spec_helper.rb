@@ -17,10 +17,17 @@ module SpecHelper
 
   def fixture_for(category)
     json = json_for(category)
-    class_for_category = class_from_string("Rdota::#{category.capitalize}")
+    classname = camelize(category)
+    class_for_category = class_from_string("Rdota::#{classname}")
 
     class_for_category.new(json)
   end
+
+  # TODO: this should be a method on String
+  def camelize(str)
+    str.split('_').map(&:capitalize).join
+  end
+
 
   private
     def test_client
