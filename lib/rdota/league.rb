@@ -1,5 +1,8 @@
+require 'rdota/dota_api_object'
+
 module Rdota
-  class League
+  class League < DotaApiObject
+    compare_equality_using_instance_variables
     attr_reader :name, :leagueid, :description, :tournament_url
 
     def initialize(args = {})
@@ -8,17 +11,6 @@ module Rdota
       @description    = args["description"]
       @tournament_url = args["tournament_url"]
     end
-
-    # TODO: Make all this comparable by mixing a module
-    alias_method :eql?, :==
-    def ==(object)
-      self.class == object.class && attr == object.attr
-    end
-
-    protected
-      def attr
-        instance_variables
-      end
 
   end
 end

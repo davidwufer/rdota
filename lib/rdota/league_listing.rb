@@ -13,6 +13,10 @@ module Rdota
       self.class == object.class && attr == object.attr
     end
 
+    def hash
+      attr.hash
+    end
+
     protected
       def attr
         instance_variables
