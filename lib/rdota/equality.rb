@@ -9,7 +9,6 @@ module Rdota
 
         def compare_equality_using(*args)
           variables_as_strings = args.flatten.map { |arg| "@#{arg.to_s}" }
-          puts variables_as_strings
           establish_equality_between(variables_as_strings)
         end
 
