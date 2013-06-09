@@ -14,7 +14,7 @@ module Rdota
                 :spectators, :tower_state, :league_id
 
     def initialize(args = {})
-      @players      = args['players'].map { |p| Player.new(p) }
+      @players      = args['players'].map { |p| LeaguePlayer.new(p) }
       @radiant_team = Team.new(args['radiant_team'])
       @dire_team    = Team.new(args['dire_team'])
       @lobby_id     = args['lobby_id']
@@ -36,7 +36,7 @@ module Rdota
     end
   end
 
-  class Player < DotaApiObject
+  class LeaguePlayer < DotaApiObject
     compare_equality_using_instance_variables
     attr_reader :account_id, :name, :hero_id, :team
 

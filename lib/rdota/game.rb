@@ -5,7 +5,7 @@ module Rdota
                 :spectators, :tower_state, :league_id
 
     def initialize(args = {})
-      @players      = args['players'].map { |p| Player.new(p) }
+      @players      = args['players'].map { |p| LeaguePlayer.new(p) }
       @radiant_team = Team.new(args['radiant_team'])
       @dire_team    = Team.new(args['dire_team'])
       @lobby_id     = args['lobby_id']

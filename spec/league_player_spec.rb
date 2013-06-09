@@ -2,10 +2,10 @@ require 'spec_helper'
 
 include Rdota
 
-describe Player do
-  it_should_behave_like "an api object", fixture_for('player')
+describe LeaguePlayer do
+  it_should_behave_like "an api object", fixture_for('league_player')
 
-  let(:player) { fixture_for 'player' }
+  let(:player) { fixture_for 'league_player' }
 
   it 'should return the correct account_id' do
     player.account_id.should == 12196957
