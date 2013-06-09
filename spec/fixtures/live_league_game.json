@@ -1,0 +1,93 @@
+{
+        "players": [
+          {
+            "account_id": 12196957,
+            "name": "Maut",
+            "hero_id": 0,
+            "team": 2
+          },
+          {
+            "account_id": 86761836,
+            "name": "Artyk mstco",
+            "hero_id": 86,
+            "team": 0
+          },
+          {
+            "account_id": 10366616,
+            "name": "dignitas.@SneykingDota2",
+            "hero_id": 51,
+            "team": 1
+          },
+          {
+            "account_id": 67893845,
+            "name": "Anacletus",
+            "hero_id": 0,
+            "team": 2
+          },
+          {
+            "account_id": 5448108,
+            "name": "dignitas.@Foggeddota",
+            "hero_id": 25,
+            "team": 1
+          },
+          {
+            "account_id": 87276347,
+            "name": "dignitas.@Universedota",
+            "hero_id": 18,
+            "team": 1
+          },
+          {
+            "account_id": 94923783,
+            "name": "Artyk Masoku",
+            "hero_id": 3,
+            "team": 0
+          },
+          {
+            "account_id": 86785102,
+            "name": "Artyk MiHawk",
+            "hero_id": 55,
+            "team": 0
+          },
+          {
+            "account_id": 38515149,
+            "name": "dignitas.waytosexy",
+            "hero_id": 92,
+            "team": 1
+          },
+          {
+            "account_id": 118073569,
+            "name": "Artyk SmAsH",
+            "hero_id": 49,
+            "team": 0
+          },
+          {
+            "account_id": 40547474,
+            "name": "dignitas.@Aui_2000",
+            "hero_id": 80,
+            "team": 1
+          },
+          {
+            "account_id": 86724433,
+            "name": "Artyk iwo;*",
+            "hero_id": 72,
+            "team": 0
+          }
+        ]
+        ,
+        "radiant_team": {
+          "team_name": "Artyk*",
+          "team_id": 367492,
+          "team_logo": 882982437243149739,
+          "complete": true
+        },
+        "dire_team": {
+          "team_name": "Team Dignitas",
+          "team_id": 142,
+          "team_logo": 558722001460412650,
+          "complete": true
+        },
+        "lobby_id": 100,
+        "spectators": 1,
+        "tower_state": 4194303,
+        "league_id": 47
+      }

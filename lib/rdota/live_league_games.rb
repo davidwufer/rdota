@@ -1,5 +1,22 @@
 module Rdota
   class LiveLeagueGames
+
+  end
+
+  class LiveLeagueGame < DotaApiObject
+    compare_equality_using_instance_variables
+    attr_reader :players, :radiant_team, :dire_team, :lobby_id,
+                :spectators, :tower_state, :league_id
+
+    def initialize(args = {})
+      @players      = args['players'].map { |p| Player.new(p) }
+      @radiant_team = Team.new(args['radiant_team'])
+      @dire_team    = Team.new(args['dire_team'])
+      @lobby_id     = args['lobby_id']
+      @spectators   = args['spectators']
+      @tower_state  = TowerState.new(args['tower_state'])
+      @league_id    = args['league_id']
+    end
   end
 
   class Team < DotaApiObject
@@ -26,7 +43,7 @@ module Rdota
     end
   end
 
-  class TowerState
+  class TowerState < DotaApiObject
       # TODO: These should probably be symbols
       @towerstate_bits = %w[
         radiant_top_tier1
@@ -57,10 +74,12 @@ module Rdota
       attr_reader :towerstate_bits
     end
 
+    compare_equality_using :number
+
+
     def initialize(number = 0)
       @number = truncate_to_32_bits(number)
     end
-
 
     def method_missing(method, *args, &block)
       bit_value_for(method)
