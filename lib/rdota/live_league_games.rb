@@ -1,6 +1,11 @@
 module Rdota
-  class LiveLeagueGames
+  class LiveLeagueGames < DotaApiObject
+    compare_equality_using :games
+    attr_reader :games
 
+    def initialize(args = {})
+      @games = args['result']['games'].map { |g| LiveLeagueGame.new(g) }
+    end
   end
 
   class LiveLeagueGame < DotaApiObject
