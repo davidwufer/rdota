@@ -3,6 +3,8 @@ require 'spec_helper'
 include Rdota
 
 describe LiveLeagueGame do
+  it_should_behave_like "an api object", fixture_for('league')
+
   let(:live_league_game) { fixture_for 'live_league_game' }
 
   it 'should respond to players' do
@@ -31,17 +33,5 @@ describe LiveLeagueGame do
 
   it 'should return the correct league_id' do
     live_league_game.league_id.should == 47
-  end
-
-  it 'should be equal to another object with the same attributes' do
-    new_live_league_game = fixture_for 'live_league_game'
-
-    live_league_game.should == new_live_league_game
-  end
-
-  it 'should have the same hash key as another object with the same attributes' do
-    new_live_league_game = fixture_for 'live_league_game'
-
-    live_league_game.hash.should == new_live_league_game.hash
   end
 end

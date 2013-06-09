@@ -3,6 +3,8 @@ require 'spec_helper'
 include Rdota
 
 describe Game do
+  it_should_behave_like "an api object", fixture_for('game')
+
   let(:game) { fixture_for 'game' }
 
   it 'should respond to players' do

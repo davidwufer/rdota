@@ -3,6 +3,8 @@ require 'spec_helper'
 include Rdota
 
 describe Team do
+  it_should_behave_like "an api object", fixture_for('team')
+
   let(:team) { fixture_for "team" }
 
   it "should return the right team name" do
@@ -19,13 +21,5 @@ describe Team do
 
   it "should return the right 'complete'" do
     team.complete.should == "yes"
-  end
-
-  it "should be == to another team with the same attributes" do
-    team.should == fixture_for("team")
-  end
-
-  it "should have the same hash key as another team with the same attributes" do
-    team.hash.should == fixture_for("team").hash
   end
 end

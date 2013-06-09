@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 describe Rdota::LeagueListing do
-  let(:league_listing) { fixture_for('league_listing') }
+  it_should_behave_like "an api object", fixture_for('league_listing')
+
+  let(:league_listing) { fixture_for 'league_listing' }
   let(:league1) do
     League.new(
         "name" => "#DOTA1",
@@ -23,9 +25,4 @@ describe Rdota::LeagueListing do
   it 'should return the correct leagues' do
     league_listing.leagues.should == [league1, league2]
   end
-
-  it 'should be == to a league with the same leagues' do
-    league_listing.should == fixture_for('league_listing')
-  end
-
 end

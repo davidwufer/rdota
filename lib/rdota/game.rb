@@ -1,5 +1,6 @@
 module Rdota
   class Game < DotaApiObject
+    compare_equality_using_instance_variables
     attr_reader :players, :radiant_team, :dire_team, :lobby_id,
                 :spectators, :tower_state, :league_id
 

@@ -3,6 +3,8 @@ require 'json'
 require 'rdota'
 require 'webmock/rspec'
 
+Dir["./spec/support/**/*.rb"].sort.each {|f| require f}
+
 RSpec.configure do |config|
   config.color_enabled = true
   config.formatter     = 'documentation'

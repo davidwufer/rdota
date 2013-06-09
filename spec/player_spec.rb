@@ -3,6 +3,8 @@ require 'spec_helper'
 include Rdota
 
 describe Player do
+  it_should_behave_like "an api object", fixture_for('player')
+
   let(:player) { fixture_for 'player' }
 
   it 'should return the correct account_id' do
@@ -20,9 +22,4 @@ describe Player do
   it 'should return the correct team' do
     player.team.should == 2
   end
-
-  it 'should be equal to another player with the same instance variables' do
-    player.should == fixture_for('player')
-  end
-
 end

@@ -3,6 +3,7 @@ require 'spec_helper'
 include Rdota
 
 describe TowerState do
+  it_should_behave_like "an api object", TowerState.new(1)
 
   let(:towerstate) { TowerState.new(1) }
 
@@ -37,18 +38,6 @@ describe TowerState do
 
   it 'should return the right value for dire_ancient_top' do
     towerstate.dire_ancient_top.should == 1
-  end
-
-  it 'should be equal to another tower_state with the same number' do
-    new_towerstate = TowerState.new(1)
-
-    towerstate.should == new_towerstate
-  end
-
-  it 'should have a hash equal to another tower_state with the same attributes' do
-    new_towerstate = TowerState.new(1)
-
-    towerstate.should.hash == new_towerstate.hash
   end
 end
 
