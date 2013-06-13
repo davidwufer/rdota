@@ -48,7 +48,7 @@ module SpecHelper
 
     def class_from_string(str)
       str.split('::').inject(Object) do |mod, inner_module|
-      mod.const_get(inner_module)
+        mod.const_get(inner_module)
+      end
     end
-  end
 end
