@@ -1,6 +1,5 @@
 module Rdota
   module Equality
-
     def self.included(parent)
       class << parent
         def compare_equality_using_instance_variables

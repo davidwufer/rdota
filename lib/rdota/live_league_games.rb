@@ -1,3 +1,5 @@
+require 'rdota/bit_operations'
+
 module Rdota
   class LiveLeagueGames < DotaApiObject
     compare_equality_using :games
@@ -48,9 +50,8 @@ module Rdota
     end
   end
 
-  class TowerState < DotaApiObject
-      # TODO: These should probably be symbols
-      @towerstate_bits = %w[
+  class TowerState < BitFlagDotaApiObject
+      @bits = %i[
         radiant_top_tier1
         radiant_top_tier2
         radiant_top_tier3
@@ -75,33 +76,8 @@ module Rdota
         dire_ancient_top
       ].reverse.freeze
 
-    class << self
-      attr_reader :towerstate_bits
-    end
-
-    compare_equality_using :number
-
-
-    def initialize(number = 0)
-      @number = truncate_to_32_bits(number)
-    end
-
-    def method_missing(method, *args, &block)
-      bit_value_for(method)
-    end
-
-    def respond_to?(method, include_private = false)
-      TowerState.towerstate_bits.include?(method) || super
-    end
-
-    private
-      def truncate_to_32_bits(num)
-        num & (2**31 - 1)
-      end
-
-      def bit_value_for(category)
-        index = TowerState.towerstate_bits.find_index(category.to_s)
-        (@number >> index) & 1
+      class << self
+        attr_reader :bits
       end
   end
 end
