@@ -1,6 +1,21 @@
 require 'rdota/bit_operations'
 
 module Rdota
+  class MatchDetails < DotaApiObject
+  end
+
+  class PicksBans < DotaApiObject
+    compare_equality_using_instance_variables
+
+    attr_reader :is_pick, :hero_id, :team, :order
+    def initialize(args = {})
+      @is_pick = args['is_pick']
+      @hero_id = args['hero_id']
+      @team    = args['team']
+      @order   = args['order']
+    end
+  end
+
   class PlayerSlot < DotaApiObject
     @max_bits = 8
     class << self
