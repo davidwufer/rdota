@@ -53,13 +53,13 @@ module Rdota
   end
 
   class BarracksStatus < BitFlagDotaApiObject
-    @bits = %i[
-      bottom_ranged
-      bottom_melee
-      middle_ranged
-      middle_melee
-      top_ranged
-      top_melee
+    @bits = [
+      :bottom_ranged,
+      :bottom_melee,
+      :middle_ranged,
+      :middle_melee,
+      :top_ranged,
+      :top_melee
     ].reverse.freeze
 
     class << self

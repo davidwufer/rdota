@@ -51,29 +51,29 @@ module Rdota
   end
 
   class TowerState < BitFlagDotaApiObject
-      @bits = %i[
-        radiant_top_tier1
-        radiant_top_tier2
-        radiant_top_tier3
-        radiant_middle_tier1
-        radiant_middle_tier2
-        radiant_middle_tier3
-        radiant_bottom_tier1
-        radiant_bottom_tier2
-        radiant_bottom_tier3
-        radiant_ancient_bottom
-        radiant_ancient_top
-        dire_top_tier1
-        dire_top_tier2
-        dire_top_tier3
-        dire_middle_tier1
-        dire_middle_tier2
-        dire_middle_tier3
-        dire_bottom_tier1
-        dire_bottom_tier2
-        dire_bottom_tier3
-        dire_ancient_bottom
-        dire_ancient_top
+      @bits = [
+        :radiant_top_tier1,
+        :radiant_top_tier2,
+        :radiant_top_tier3,
+        :radiant_middle_tier1,
+        :radiant_middle_tier2,
+        :radiant_middle_tier3,
+        :radiant_bottom_tier1,
+        :radiant_bottom_tier2,
+        :radiant_bottom_tier3,
+        :radiant_ancient_bottom,
+        :radiant_ancient_top,
+        :dire_top_tier1,
+        :dire_top_tier2,
+        :dire_top_tier3,
+        :dire_middle_tier1,
+        :dire_middle_tier2,
+        :dire_middle_tier3,
+        :dire_bottom_tier1,
+        :dire_bottom_tier2,
+        :dire_bottom_tier3,
+        :dire_ancient_bottom,
+        :dire_ancient_top
       ].reverse.freeze
 
       class << self
