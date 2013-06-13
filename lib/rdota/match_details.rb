@@ -4,6 +4,9 @@ module Rdota
   class MatchDetails < DotaApiObject
   end
 
+  class GameMode < DotaApiObject
+  end
+
   class PicksBans < DotaApiObject
     compare_equality_using_instance_variables
 
