@@ -4,6 +4,9 @@ module Rdota
   class MatchDetails < DotaApiObject
   end
 
+  class AdditionalUnit < DotaApiObject
+  end
+
   class LobbyType < DotaApiObject
     @types = [
       "Invalid",
@@ -18,6 +21,8 @@ module Rdota
     class << self
       attr_reader :types
     end
+
+    compare_equality_using :number
 
     def initialize(number)
       @number = number
@@ -57,9 +62,9 @@ module Rdota
       attr_reader :modes
     end
 
-    attr_reader :number
+    compare_equality_using :number
 
-    def initialize(number = 0)
+    def initialize(number)
       @number = number
     end
 
@@ -70,6 +75,9 @@ module Rdota
     def to_s
       GameMode.modes[number]
     end
+
+    private
+      attr_reader :number
   end
 
   class PicksBans < DotaApiObject

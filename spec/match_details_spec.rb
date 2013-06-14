@@ -3,7 +3,13 @@ require 'spec_helper'
 include Rdota
 
 describe "Match Details" do
+  describe AdditionalUnit do
+
+  end
+
   describe LobbyType do
+    it_should_behave_like "an api object", LobbyType.new(-1)
+
     let(:lobbytype) { LobbyType.new(-1) }
 
     it "should return the correct value for to_i" do
@@ -16,6 +22,8 @@ describe "Match Details" do
   end
 
   describe GameMode do
+    it_should_behave_like "an api object", GameMode.new(2)
+
     let(:game_mode) { GameMode.new(2) }
 
     it "should return the correct value for to_i" do
@@ -29,6 +37,7 @@ describe "Match Details" do
 
   describe TowerStatus do
     describe 'messages' do
+
       before { pending }
 
       subject { TowerStatus.new(0) }
