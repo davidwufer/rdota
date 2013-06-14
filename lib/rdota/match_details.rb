@@ -4,6 +4,37 @@ module Rdota
   class MatchDetails < DotaApiObject
   end
 
+  class LobbyType < DotaApiObject
+    @types = [
+      "Invalid",
+      "Public matchmaking",
+      "Practise",
+      "Tournament",
+      "Tutorial",
+      "Co-op with bots",
+      "Team match"
+    ]
+
+    class << self
+      attr_reader :types
+    end
+
+    def initialize(number)
+      @number = number
+    end
+
+    def to_i
+      number
+    end
+
+    def to_s
+      LobbyType.types[number + 1]
+    end
+
+    private
+      attr_reader :number
+  end
+
   class GameMode < DotaApiObject
     @modes = [
       "All Pick",
