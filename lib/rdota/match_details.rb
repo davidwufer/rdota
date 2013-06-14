@@ -5,6 +5,40 @@ module Rdota
   end
 
   class GameMode < DotaApiObject
+    @modes = [
+      "All Pick",
+      "Single Draft",
+      "All Random",
+      "Random Draft",
+      "Captain's Draft",
+      "Captain's Mode",
+      "Death Mode",
+      "Diretide",
+      "Reverse Captain's Mode",
+      "The Greeviling",
+      "Tutorial",
+      "Mid Only",
+      "Least Played",
+      "New Player Pool"
+    ]
+
+    class << self
+      attr_reader :modes
+    end
+
+    attr_reader :number
+
+    def initialize(number = 0)
+      @number = number
+    end
+
+    def to_i
+      number
+    end
+
+    def to_s
+      GameMode.modes[number]
+    end
   end
 
   class PicksBans < DotaApiObject

@@ -3,6 +3,18 @@ require 'spec_helper'
 include Rdota
 
 describe "Match Details" do
+  describe GameMode do
+    let(:game_mode) { GameMode.new(2) }
+
+    it "should return the correct value for to_i" do
+      game_mode.to_i.should == 2
+    end
+
+    it "should return the correct value for to_s" do
+      game_mode.to_s.should == "All Random"
+    end
+  end
+
   describe TowerStatus do
     describe 'messages' do
       before { pending }
