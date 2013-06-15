@@ -1,0 +1,123 @@
+{
+        "account_id": 4294967295,
+        "player_slot": 0,
+        "hero_id": 34,
+        "item_0": 1,
+        "item_1": 41,
+        "item_2": 178,
+        "item_3": 48,
+        "item_4": 34,
+        "item_5": 40,
+        "kills": 5,
+        "deaths": 18,
+        "assists": 11,
+        "leaver_status": 0,
+        "gold": 1085,
+        "last_hits": 161,
+        "denies": 2,
+        "gold_per_min": 288,
+        "xp_per_min": 358,
+        "gold_spent": 7668,
+        "hero_damage": 14717,
+        "tower_damage": 449,
+        "hero_healing": 0,
+        "level": 19,
+        "ability_upgrades": [
+          {
+            "ability": 5152,
+            "time": 121,
+            "level": 1
+          },
+          {
+            "ability": 5151,
+            "time": 253,
+            "level": 2
+          },
+          {
+            "ability": 5152,
+            "time": 308,
+            "level": 3
+          },
+          {
+            "ability": 5151,
+            "time": 395,
+            "level": 4
+          },
+          {
+            "ability": 5152,
+            "time": 450,
+            "level": 5
+          },
+          {
+            "ability": 5151,
+            "time": 636,
+            "level": 6
+          },
+          {
+            "ability": 5152,
+            "time": 717,
+            "level": 7
+          },
+          {
+            "ability": 5151,
+            "time": 959,
+            "level": 8
+          },
+          {
+            "ability": 5150,
+            "time": 1146,
+            "level": 9
+          },
+          {
+            "ability": 5150,
+            "time": 1308,
+            "level": 10
+          },
+          {
+            "ability": 5153,
+            "time": 1393,
+            "level": 11
+          },
+          {
+            "ability": 5150,
+            "time": 1673,
+            "level": 12
+          },
+          {
+            "ability": 5150,
+            "time": 1854,
+            "level": 13
+          },
+          {
+            "ability": 5002,
+            "time": 2057,
+            "level": 14
+          },
+          {
+            "ability": 5002,
+            "time": 2364,
+            "level": 15
+          },
+          {
+            "ability": 5002,
+            "time": 2816,
+            "level": 16
+          },
+          {
+            "ability": 5002,
+            "time": 3015,
+            "level": 17
+          },
+          {
+            "ability": 5002,
+            "time": 3102,
+            "level": 18
+          },
+          {
+            "ability": 5153,
+            "time": 3236,
+            "level": 19
+          }
+        ]
+
+}

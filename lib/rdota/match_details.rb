@@ -4,6 +4,17 @@ module Rdota
   class MatchDetails < DotaApiObject
   end
 
+  class AbilityUpgrade < DotaApiObject
+    compare_equality_using_instance_variables
+    attr_reader :ability, :time, :level
+
+    def initialize(args = {})
+      @ability = args['ability']
+      @time    = args['time']
+      @level   = args['level']
+    end
+  end
+
   class AdditionalUnit < DotaApiObject
     compare_equality_using_instance_variables
     attr_reader :unitname

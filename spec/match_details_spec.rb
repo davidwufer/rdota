@@ -3,6 +3,24 @@ require 'spec_helper'
 include Rdota
 
 describe "Match Details" do
+  describe AbilityUpgrade do
+    it_should_behave_like "an api object", fixture_for("ability_upgrade")
+
+    let(:ability_upgrade) { fixture_for 'ability_upgrade' }
+
+    it "should return the correct ability" do
+      ability_upgrade.ability.should == 5152
+    end
+
+    it "should return the correct time" do
+      ability_upgrade.time.should == 121
+    end
+
+    it "should return the correct level" do
+      ability_upgrade.level.should == 1
+    end
+  end
+
   describe AdditionalUnit do
     it_should_behave_like "an api object", fixture_for("additional_unit")
 
