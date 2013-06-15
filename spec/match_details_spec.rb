@@ -4,7 +4,20 @@ include Rdota
 
 describe "Match Details" do
   describe AdditionalUnit do
+    it_should_behave_like "an api object", fixture_for("additional_unit")
 
+    let(:additional_unit) { fixture_for 'additional_unit' }
+
+    it "should return the correct unitname" do
+      additional_unit.unitname.should == "Spirit Bear"
+    end
+
+    expected_items = [0, 1, 2, 3, 4, 5]
+    (0..5).each do |slot|
+      it "should return the right item in slot #{slot}" do
+        additional_unit.send("item_#{slot}".to_sym).should == expected_items[slot]
+      end
+    end
   end
 
   describe LobbyType do

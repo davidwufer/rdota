@@ -5,6 +5,19 @@ module Rdota
   end
 
   class AdditionalUnit < DotaApiObject
+    compare_equality_using_instance_variables
+    attr_reader :unitname
+    attr_reader :item_0, :item_1, :item_2, :item_3, :item_4, :item_5
+
+    def initialize(args = {})
+      @unitname = args['unitname']
+      @item_0   = args['item_0']
+      @item_1   = args['item_1']
+      @item_2   = args['item_2']
+      @item_3   = args['item_3']
+      @item_4   = args['item_4']
+      @item_5   = args['item_5']
+    end
   end
 
   class LobbyType < DotaApiObject
