@@ -29,6 +29,8 @@ module Rdota
     attr_reader :tower_damage
     attr_reader :hero_healing
     attr_reader :level
+    attr_reader :additional_units
+    attr_reader :ability_upgrades
 
 
     def initialize(args = {})
@@ -62,14 +64,12 @@ module Rdota
                               AbilityUpgrade.new(au)
                             end
       end
-
-      @ability_upgrades = args['ability_upgrades'].map do |au|
-                            AbilityUpgrade.new(au)
-                          end
-
-      @additional_units = args['additional_units'].map do |au|
-                            AdditionalUnit.new(au)
-                          end
+      @additional_units = args['additional_units']
+      if @additional_units
+        @additional_units = @additional_units.map do |au|
+                              AdditionalUnit.new(au)
+                            end
+      end
     end
 
   end
