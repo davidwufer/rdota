@@ -1,15 +1,16 @@
 module Rdota
   module ApiUrl
-    BASE_URL = "https://api.steampowered.com/"
+    ROOT_URL = "https://api.steampowered.com/"
     DOTA_ID = 570
     MATCHES ="IDOTA2Match_#{DOTA_ID}/"
     GAME = "IDOTA2_#{DOTA_ID}/"
 
-    VERSION = "001"
+    VERSION = "001/"
 
     # TODO: Attach Key
+    # TODO: Attach Language
     def self.league_listing_url
-      "#{BASE_URL}#{MATCHES}GetLeagueListing/#{VERSION}"
+      "#{ROOT_URL}#{MATCHES}GetLeagueListing/#{VERSION}"
     end
   end
 end

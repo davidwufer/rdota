@@ -1,9 +1,12 @@
+require 'faraday'
+require 'faraday_middleware'
+
 module Rdota
   class Connection
     attr_reader :faraday
 
     def initialize(args = {})
-      @faraday = args[:faraday] || default_faraday
+      @faraday = args[:faraday] || Faraday.new
     end
 
     def request(url, params = {})

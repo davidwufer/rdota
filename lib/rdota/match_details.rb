@@ -4,6 +4,76 @@ module Rdota
   class MatchDetails < DotaApiObject
   end
 
+  class Player < DotaApiObject
+    compare_equality_using_instance_variables
+    attr_reader :account_id
+    attr_reader :player_slot
+    attr_reader :hero_id
+    attr_reader :item_0
+    attr_reader :item_1
+    attr_reader :item_2
+    attr_reader :item_3
+    attr_reader :item_4
+    attr_reader :item_5
+    attr_reader :kills
+    attr_reader :deaths
+    attr_reader :assists
+    attr_reader :leaver_status
+    attr_reader :gold
+    attr_reader :last_hits
+    attr_reader :denies
+    attr_reader :gold_per_min
+    attr_reader :xp_per_min
+    attr_reader :gold_spent
+    attr_reader :hero_damage
+    attr_reader :tower_damage
+    attr_reader :hero_healing
+    attr_reader :level
+
+
+    def initialize(args = {})
+      @account_id = args['account_id']
+      @player_slot = args['player_slot']
+      @hero_id = args['hero_id']
+      @item_0 = args['item_0']
+      @item_1 = args['item_1']
+      @item_2 = args['item_2']
+      @item_3 = args['item_3']
+      @item_4 = args['item_4']
+      @item_5 = args['item_5']
+      @kills = args['kills']
+      @deaths = args['deaths']
+      @assists = args['assists']
+      @leaver_status = args['leaver_status']
+      @gold = args['gold']
+      @last_hits = args['last_hits']
+      @denies = args['denies']
+      @gold_per_min = args['gold_per_min']
+      @xp_per_min = args['xp_per_min']
+      @gold_spent = args['gold_spent']
+      @hero_damage = args['hero_damage']
+      @tower_damage = args['tower_damage']
+      @hero_healing = args['hero_healing']
+      @level = args['level']
+
+      @ability_upgrades = args['ability_upgrades']
+      if @ability_upgrades
+        @ability_upgrades = @ability_upgrades.map do |au|
+                              AbilityUpgrade.new(au)
+                            end
+      end
+
+      @ability_upgrades = args['ability_upgrades'].map do |au|
+                            AbilityUpgrade.new(au)
+                          end
+
+      @additional_units = args['additional_units'].map do |au|
+                            AdditionalUnit.new(au)
+                          end
+    end
+
+  end
+
   class AbilityUpgrade < DotaApiObject
     compare_equality_using_instance_variables
     attr_reader :ability, :time, :level

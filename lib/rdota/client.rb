@@ -3,21 +3,20 @@ require 'rdota/configuration'
 
 module Rdota
   class Client
+    attr_reader :config, :connection
 
     def initialize(args = {})
-      @config = args[:configuration] || Configuration.new
-    end
-
-    def connection
-      @connection ||= Connection.new
+      @config     = args[:configuration] || Configuration.new
+      @connection = args[:connection] || Connection.new
     end
 
     def configure
       yield(@config)
     end
 
-    def get(url, params = {})
-      @connection.request(url, params)
+    def request(url, params = {})
+      response = @connection.request(url, params.merge(key: config.key))
+      response.body
     end
   end
 end

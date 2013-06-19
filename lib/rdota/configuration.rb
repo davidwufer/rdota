@@ -1,14 +1,15 @@
 module Rdota
   class Configuration
-    attr_accessor :api_key
+    attr_accessor :key
 
-    def self.configuration
-      @configuration ||= Configuration.new
+    def initialize(args = {})
+      args.each_pair do |name, value|
+        setter = "#{name}="
+
+        if respond_to?(setter)
+          public_send(setter, value)
+        end
+      end
     end
-
-    def self.configure
-      yield(@configuration) if block_given?
-    end
-
   end
 end
