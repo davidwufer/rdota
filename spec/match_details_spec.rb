@@ -217,6 +217,8 @@ describe "Match Details" do
   end
 
   describe TowerStatus do
+    it_should_behave_like "an api object", TowerStatus.new(0)
+
     describe 'messages' do
       subject { TowerStatus.new(0) }
 
@@ -231,6 +233,11 @@ describe "Match Details" do
       it { should respond_to :top_tier3 }
       it { should respond_to :top_tier2 }
       it { should respond_to :top_tier1 }
+    end
+
+    it 'should return the correct value for top_tier1' do
+      towerstatus = TowerStatus.new(1)
+      towerstatus.top_tier1.should == 1
     end
   end
 
