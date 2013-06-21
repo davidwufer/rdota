@@ -219,7 +219,23 @@ module Rdota
   end
 
   class TowerStatus < BitFlagDotaApiObject
-    # This is very similar to live_league_games.towerstate
+    @bits = [
+      :ancient_top,
+      :ancient_bottom,
+      :bottom_tier3,
+      :bottom_tier2,
+      :bottom_tier1,
+      :middle_tier3,
+      :middle_tier2,
+      :middle_tier1,
+      :top_tier3,
+      :top_tier2,
+      :top_tier1,
+    ].reverse.freeze
+
+    class << self
+      attr_reader :bits
+    end
   end
 
   class BarracksStatus < BitFlagDotaApiObject

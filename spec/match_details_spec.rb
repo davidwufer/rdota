@@ -218,9 +218,6 @@ describe "Match Details" do
 
   describe TowerStatus do
     describe 'messages' do
-
-      before { pending }
-
       subject { TowerStatus.new(0) }
 
       it { should respond_to :ancient_top }
