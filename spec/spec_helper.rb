@@ -35,7 +35,7 @@ module SpecHelper
     def test_client
       client = Rdota::Client.new
       client.configure do |configuration|
-        configuration.api_key = 'API_KEY'
+        configuration.key = 'API_KEY'
       end
 
       client

@@ -4,9 +4,14 @@ include Rdota
 
 describe "Match Details" do
   describe MatchDetails do
-    before { pending }
+    it_should_behave_like "an api object", fixture_for('match_details')
+
+    let(:match_details) { fixture_for 'match_details' }
 
     describe "internal objects" do
+      subject { match_details }
+
+      it { should respond_to 'players' }
       it { should respond_to "lobby_type" }
       it { should respond_to "game_mode" }
       it { should respond_to "picks_bans" }
@@ -14,55 +19,57 @@ describe "Match Details" do
       it { should respond_to "tower_status_dire" }
       it { should respond_to "barracks_status_radiant" }
       it { should respond_to "barracks_status_dire" }
-
+      it { should respond_to "lobby_type" }
+      it { should respond_to "game_mode" }
+      it { should respond_to "picks_bans" }
     end
 
     it "should return the correct season" do
-      player.season.should == 0
+      match_details.season.should == 0
     end
 
     it "should return the correct value for radiant_win" do
-      player.radiant_win.should be_true
+      match_details.radiant_win.should be_false
     end
 
     it "should return the correct duration" do
-      player.duration.should == 1975
+      match_details.duration.should == 3208
     end
 
     it "should return the correct start_time" do
-      player.start_time.should == 1370506963
+      match_details.start_time.should == 1370506972
     end
 
     it "should return the correct match_id" do
-      player.match_id.should == 212743691
+      match_details.match_id.should == 212743690
     end
 
     it "should return the correct math_seq_num" do
-      player.match_seq_num.should == 191744529
+      match_details.match_seq_num.should == 191754031
     end
 
     it "should return the right cluster" do
-      player.cluster.should == 182
+      match_details.cluster.should == 112
     end
 
     it "should return the correct first blood time" do
-      player.first_blood_time.should == 84
-    end
-
-    it "should return the correct lobby_type" do
-      player.lobby_type.should == 0
+      match_details.first_blood_time.should == 137
     end
 
     it "should return the correct value for human players" do
-      player.human_players.should == 10
+      match_details.human_players.should == 10
     end
 
     it "should return the correct leagueid" do
-      player.leagueid.should == 0
+      match_details.leagueid.should == 0
     end
 
-    it "should return the " do
+    it "should return the correct positive_votes" do
+      match_details.positive_votes.should == 1
+    end
 
+    it "should return the correct negative_votes" do
+      match_details.negative_votes.should == 0
     end
   end
 

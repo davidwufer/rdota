@@ -2,6 +2,35 @@ require 'rdota/bit_operations'
 
 module Rdota
   class MatchDetails < DotaApiObject
+    compare_equality_using_instance_variables
+    attr_reader :players, :season, :radiant_win, :duration, :start_time,
+                :match_id, :match_seq_num, :tower_status_radiant,
+                :tower_status_dire, :barracks_status_radiant,
+                :barracks_status_dire, :cluster, :first_blood_time,
+                :lobby_type, :human_players, :leagueid, :positive_votes,
+                :negative_votes, :game_mode, :picks_bans
+
+    def initialize(args = {})
+      result = args["result"]
+      @players = result["players"].map { |p| Player.new(p) }
+      @season  = result["season"]
+      @radiant_win = result["radiant_win"]
+      @duration = result["duration"]
+      @start_time = result["start_time"]
+      @match_id = result["match_id"]
+      @match_seq_num = result["match_seq_num"]
+      @tower_status_radiant = TowerStatus.new(result["tower_status_radiant"])
+      @tower_status_dire = TowerStatus.new(result["tower_status_dire"])
+      @cluster = result["cluster"]
+      @first_blood_time = result["first_blood_time"]
+      @lobby_type = LobbyType.new(result["lobby_type"])
+      @human_players = result["human_players"]
+      @leagueid = result["leagueid"]
+      @positive_votes = result["positive_votes"]
+      @negative_votes = result["negative_votes"]
+      @game_mode = GameMode.new(result["game_mode"])
+      @picks_bans = (temp = result["picks_bans"]) && PicksBans.new(temp)
+    end
   end
 
   class Player < DotaApiObject
