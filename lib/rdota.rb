@@ -4,6 +4,10 @@ require 'rdota/client'
 require 'rdota/league_listing'
 require 'rdota/live_league_games'
 require 'rdota/match_details'
+require 'rdota/match_history'
+
+# Shared objects
+require 'rdota/lobby_type'
 
 require 'rdota/game'
 
