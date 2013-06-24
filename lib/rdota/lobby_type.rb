@@ -7,7 +7,8 @@ module Rdota
       "Tournament",
       "Tutorial",
       "Co-op with bots",
-      "Team match"
+      "Team match",
+      "Single Queue"
     ]
 
     class << self

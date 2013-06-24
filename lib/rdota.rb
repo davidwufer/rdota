@@ -8,6 +8,7 @@ require 'rdota/match_history'
 
 # Shared objects
 require 'rdota/lobby_type'
+require 'rdota/player_slot'
 
 require 'rdota/game'
 
